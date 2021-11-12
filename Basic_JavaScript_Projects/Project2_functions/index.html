@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=".\JS\main.js"></script>
+</head>
+<body>
+    <div id="bug">Oh no a bug!</div><!--This labels this section 'bug'-->
+    <button onclick="deadbug()">Smoosh!</button><!--create button and call the deadbug JS function-->
+   <script>
+       function deadbug() {
+           document.getElementById("bug").innerHTML = "Now it's dead"; 
+       }
+   </script> <!--this function changes the text to 'now its dead' after the button is pushed-->
+   <br>
+
+   <div id="joining">
+       
+    <p id="concatenate" onclick = "myFunction()">Click Here!</p><!--calls the myFunction from JS when Click Here is clicked on-->
+
+
+   </div>
+   
+    
+</body>
+</html>
