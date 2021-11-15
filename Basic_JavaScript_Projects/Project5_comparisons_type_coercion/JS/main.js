@@ -21,3 +21,12 @@ function not_Function() {
     document.getElementById("Not").innerHTML = !(30 > 10); /*- this line will return FALSE-*/
     document.getElementById("Not").innerHTML = !(4 > 11); /*-combined with the first line, this will return TRUE bc it is a double negative -*/
 }
+
+function Ride_Function() {
+    var Height, Can_Ride;
+    Height = document.getElementById("Height").value;
+    Can_ride = (Height < 52) ? "You are too short":"You are tall enough";
+    document.getElementById("Ride").innerHTML = Can_ride + " to ride.";
+}
+
+document.write("This is a string with a number for my buddy Ryan he's number.." + 1);
