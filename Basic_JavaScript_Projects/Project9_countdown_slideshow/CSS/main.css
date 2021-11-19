@@ -1,19 +1,18 @@
-* {box-sizing:border-box;}
+* {
+    box-sizing:border-box;}
 
 /*Slideshow container*/
 .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
-    object-fit: contain;
+   object-fit: cover;
 }
 
 /*Hide the images by default*/
 .mySlides {
-    object-fit: contain;
-    display: none;
-    height: auto;
-    width: auto; 
+    object-fit: cover;
+    display: none; 
 }
 
 /*Next and previous buttons*/
