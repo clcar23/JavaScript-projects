@@ -36,7 +36,7 @@ function placeXOrO(squareNumber) {
 
 
         //This function plays placement sound.
-         new Audio('./media/squelch.mp3');
+       audio('./media/squelch.mp3');
         //This condition checks to see if it is computers turn.
         if (activePlayer === 'O') {
             //This function disables clicking for computer choice.
@@ -79,7 +79,7 @@ function placeXOrO(squareNumber) {
         // X 6, 7, 8 condition.
         else if (arrayIncludes('6X', '7X', '8X')) {drawWinLine(50, 508, 558, 508) }
         // X 0, 3, 6 condition.
-        else if (arrayIncludes('0X', '3x', '6X')) {drawWinLine(100, 50, 100, 558) }
+        else if (arrayIncludes('0X', '3X', '6X')) {drawWinLine(100, 50, 100, 558) }
         // X 1, 4, 7 condition.
         else if (arrayIncludes('1X', '4X', '7X')) {drawWinLine(304, 50, 304, 558) }
         // X 2, 5, 8 condition.
@@ -108,7 +108,7 @@ function placeXOrO(squareNumber) {
         //squares are selected the code executes.
         else if (selectedSquares.length >= 9) {
             //This function plays the tie game sound.
-           new Audio('./media/scream.mp3');
+           audio('./media/scream.mp3');
             //This function sets a .3 second timer before the resetGame is called.
             setTimeout(function () { resetGame(); }, 1000);
         }
@@ -223,11 +223,11 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
 //This function resets the game in the event of a tie or a win.
 function resetGame() {
     //This for loop iterates through each HTML square element
-    for (let i = 0; 1 < 9; i++) {
+    for (let i = 0; i < 9; i++) {
         //this variable gets the html element of i.
-        let square = document.getElementById(String(i))
+        let square = document.getElementById(String(i));
         //This remove our elements backgroundImage.
-        square.style.backgroundImage =''
+        square.style.backgroundImage ='';
     }
     //This resets our array so it is empty and we can start over.
     selectedSquares = [];
