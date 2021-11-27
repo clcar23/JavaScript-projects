@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AJAX Demo</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+			<h2>Get The Latest Content:</h2>
+			<div class='content' id="content">
+				<input type="button" class="button" value="Get Content" id="btn_content" onclick="getContent();"/>
+			</div>
+		<script type="text/javascript">
+
+            // STEP 1: setup the xml http request object
+            var ajax = new XMLHTTPRequest();
+
+            //STEP 2: prepare the open ajax request
+            ajax.open('GET', 'content.html'); //this is the content of the html being requested from the server
+            // use 'GET' or 'POST' method
+
+            //STEP 3: define the ajax response callback method
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState == 4) { // if the server is in 4 'mode' it will trigger a response
+                    document.getElementById('content').innerHTML = ajax.responseText;
+            }
+        }
+
+            //STEP 4: send the ajax request for data
+            function getContent() {
+                ajax.send();
+                    document.getElementById('btn_content').style.display = 'none';
+            }
+
+            // This is my function i've added in
+            const xhttp = new XMLHttpRequest(); // created a new request
+            xhttp.onload = function() { // this will change our header with data from the server when executed
+                document.getElementById("something").innerHTML = this.getAllResponseHeaders();
+            }
+            xhttp.open("GET", "ajax_info.txt");
+            xhttp.send();
+
+		</script>
+    </body>
+</html>
