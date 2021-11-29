@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+  
+</head>
+
+    <script>
+        $(document).ready(function() {//the '$' is a substitute for jQuery
+            $("html").append(
+                "<body>\
+                <div id='container'>\
+                    <div id='inner'>\
+                        <h1>Basic jQuery</h1>\
+                        <p id='1'>Paragraph 1</p>\
+                        <p id='2'>Paragraph 2</p>\
+                        <p id='3'>Paragraph 3</p>\
+                    </div>\
+                </div>\
+            </body>"
+        );
+        //targeting the p#2 tag. '#' is for 'class'
+        $("#2").css({"color":"red"});
+        //this method will hide the h1 when p3 is click on
+        $("#3").click(function() {
+            $('h1').hide(); 
+            //this one will print the console log when the 1st paragraph is clicked
+        $("#1").click(function() {
+            console.log("You clicked on a the paragraph!")
+        //this next one will slowly hide all paragraphs
+        $( "p" ).hide( "slow" );
+        });
+
+        });
+
+ });
+ 
+    </script>
+   
+</html>
