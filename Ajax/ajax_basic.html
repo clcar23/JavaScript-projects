@@ -14,7 +14,7 @@
 		<script type="text/javascript">
 
             // STEP 1: setup the xml http request object
-            var ajax = new XMLHTTPRequest();
+            var ajax = new XMLHttpRequest();
 
             //STEP 2: prepare the open ajax request
             ajax.open('GET', 'content.html'); //this is the content of the html being requested from the server
@@ -24,6 +24,8 @@
             ajax.onreadystatechange = function() {
                 if (ajax.readyState == 4) { // if the server is in 4 'mode' it will trigger a response
                     document.getElementById('content').innerHTML = ajax.responseText;
+                    //this is my own line, it will return the last time the page was modified.
+                    document.getElementById('content').innerHTML = ajax.getResponseHeader('Last-Modified');
             }
         }
 
@@ -33,14 +35,7 @@
                     document.getElementById('btn_content').style.display = 'none';
             }
 
-            // This is my function i've added in
-            const xhttp = new XMLHttpRequest(); // created a new request
-            xhttp.onload = function() { // this will change our header with data from the server when executed
-                document.getElementById("something").innerHTML = this.getAllResponseHeaders();
-            }
-            xhttp.open("GET", "ajax_info.txt");
-            xhttp.send();
-
+            
 		</script>
     </body>
 </html>
